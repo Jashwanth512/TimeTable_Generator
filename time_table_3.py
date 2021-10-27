@@ -8,8 +8,6 @@ def connect_to_database():
     try:
         db_connection = connector.connect(host="localhost", user="root", passwd='180262@Jashu',
                                           auth_plugin='mysql_native_password', db='timetable_db')
-        #db_connection = connector.connect(host="3.21.185.210", user="user1", passwd='jashu@123',
-        #                                  auth_plugin='mysql_native_password', db='timetable_db')
         print("DataBase Connection Successful")
     except Error as e:
         print("Error in connecting to the database: ", e)
@@ -54,10 +52,6 @@ def get_subjects(db,query):
 ###TIME TABLE GENERATOR
 subjects=get_subjects(database_connection,'select course_name from courses;')
 print('Subjects: ',subjects)
-#print(subjectss)
-#subjects=['FLAT','PE-1','CNS','IDE-1','DBMS','SE','Student_life','OE-1','CSD(q/v)','SE Lab','CSD Coding','IDE-1 LAB','DBMS Lab','PE-1 lab']
-
-
 
 def push_timeTable(total_week_timetable):
     query='delete from time_table;'
